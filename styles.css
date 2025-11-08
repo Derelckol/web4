@@ -1,0 +1,218 @@
+:root{
+  --c-bg:#463e86;      
+  --c-bg-dark:#2e2a57; 
+  --c-teal:#25c8bd;    
+  --c-text:#f2efff;    
+  --c-muted:#bfb9ff;   
+  --c-link:#ffffff;
+  --c-border:rgba(255,255,255,.18);
+  --maxw:1200px;
+}
+
+
+*{box-sizing:border-box;}
+html,body{height:100%;}
+
+
+body{
+  margin:0;
+  min-height:100vh;
+  display:flex;
+  flex-direction:column;
+
+  font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+  color:var(--c-text);
+  background:var(--c-bg);
+}
+
+
+a{color:var(--c-link); text-decoration:none;}
+a:hover,a:focus{ text-decoration:underline; outline:none; }
+:focus-visible{ outline:3px solid rgba(255,255,255,.8); outline-offset:2px; }
+
+
+.container{
+  max-width:var(--maxw);
+  margin-inline:auto;
+  padding:24px;
+}
+
+
+header{
+  flex:0 0 auto;
+}
+.header-inner{
+  max-width:var(--maxw);
+  margin-inline:auto;
+  padding:24px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between; /* logo ліворуч, іконки вправо */
+  gap:16px;
+}
+
+
+.brand{
+  display:flex;
+  align-items:center;
+  font-weight:800;
+  letter-spacing:.5px;
+}
+.brand span{
+  font-family: "Momo Signature", "Inter", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  font-weight:400;      
+  font-size:28px;       
+  text-transform:none;  
+}
+.brand svg{width:28px; height:28px;}
+
+.icons{
+  display:flex;
+  align-items:center;
+  gap:14px;
+}
+.icon-btn{
+  display:inline-grid;
+  place-items:center;
+  width:32px;
+  height:32px;
+  border-radius:999px;
+  border:1px solid var(--c-border);
+  background:transparent;
+  cursor:pointer;
+}
+.icon-btn:focus-visible{
+  outline:2px solid #fff;
+  outline-offset:2px;
+}
+
+
+main{
+  flex:1 0 auto; 
+}
+
+
+.hero{
+  display:grid;
+  align-items:start;
+  gap:40px;
+  margin-top:40px;
+}
+
+
+@media (min-width:900px){
+  .hero{
+    grid-template-columns:1.1fr .9fr;
+    gap:60px;
+  }
+}
+
+.title-wrap{
+  position:relative;
+  padding-top:20px; 
+}
+
+.teal-column{
+  position:absolute;
+  left:130px;
+  top:-60px;                 
+  width:min(360px, 58%);     
+  height:670px;              
+  background:var(--c-teal);
+  z-index:0;
+  border-radius:2px;
+}
+
+
+.title{
+  position:relative;
+  z-index:1;
+  font-size:clamp(32px,6vw,64px);
+  line-height:1.05;
+  margin:0 0 18px 0;
+  letter-spacing:.3px;
+}
+
+.media{
+  position:relative;
+  z-index:1;
+}
+.media img{
+  display:block;
+  width:100%;
+  height:auto;
+  border-radius:2px;
+}
+
+
+.title{
+  position:relative;
+  z-index:1;
+  font-size:clamp(32px,6vw,64px);
+  line-height:1.05;
+  margin:0 0 18px 0;
+  letter-spacing:.3px;
+}
+
+.media{ position:relative; }
+.media img{
+  display:block;
+  width:100%;
+  height:auto;
+  border-radius:2px;
+}
+
+
+.aside{
+  display:grid;
+  gap:50px;
+  align-content:start;
+}
+.card{ max-width:520px; }
+
+.eyebrow{
+  font-weight:800;
+  letter-spacing:.18em;
+  text-transform:uppercase;
+  color:#d4d0ff;
+  margin:0 0 10px 0;
+}
+.card p{
+  margin:0 0 14px 0;
+  color:var(--c-muted);
+  line-height:1.6;
+}
+
+.more{
+  display:inline-block;
+  padding-top:8px;
+  border-top:3px solid #d4d0ff;
+  font-weight:600;
+}
+.more:focus-visible{
+  outline:2px solid #fff;
+  outline-offset:2px;
+}
+
+
+footer{
+  flex:0 0 auto;
+  background:var(--c-bg-dark);
+}
+
+.footer-wrap{
+  padding:30px 24px;
+  margin-top:60px;      
+  text-align:center;
+  color:var(--c-muted);
+}
+
+
+@media (max-width: 899.98px){
+  .teal-column{
+    top:-10px;      
+    width:50%;      
+    height:260px;   
+  left:70px;
+  }
+}
